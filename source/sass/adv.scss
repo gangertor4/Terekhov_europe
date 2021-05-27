@@ -1,0 +1,65 @@
+.adv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding-top: 185px;
+  padding-right: 433px;
+  min-width: 1024px;
+  min-height: 860px;
+  background-color: rgba(62, 120, 167, 0.867);
+  background-image: url("../img/adv-bg-desk.png");
+  background-size: cover;
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image: url("../img/adv-bg-desk@2x.png");
+    background-size: cover;
+    }
+
+  .adv__title {
+    @include title-font;
+    margin: 0;
+    color: #FFFFFF;
+    width: 412px;
+  }
+
+  .adv__description {
+    @include desc-font;
+    width: 376px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-right: 35px;
+    margin-bottom: 39px;
+  }
+
+  .adv__button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    width: 340px;
+    height: 75px;
+    background-color: $basic-red;
+    margin-right: 70px;
+    box-sizing: border-box;
+    padding-left: 49px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: url("../img/arrow-down.svg") no-repeat;
+      background-size: contain;
+      top: 30px;
+      right: 31px;
+    }
+  }
+}

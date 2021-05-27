@@ -1,34 +1,124 @@
 @font-face {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff"); }
+  src: local("Montserrat"), url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff"); }
 
 @font-face {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Montserrat-Medium"), url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff"); }
+  src: local("Montserrat"), url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff"); }
 
 @font-face {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff"); }
+  src: local("Montserrat"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff"); }
 
 @font-face {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Montserrat-Bold"), url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff"); }
+  src: local("Montserrat"), url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff"); }
 
 body {
-  font-family: "Montserrat", sans-serif; }
+  margin: 0;
+  padding: 0; }
 
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700; }
+.header {
+  min-height: 99px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+  .header .header__menu {
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px; }
+  .header .header__nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0; }
+  .header .header__nav-item a {
+    color: #141517;
+    text-decoration: none; }
+  .header .header__nav-item:first-child {
+    margin-right: 40px; }
+  .header .header__phone {
+    margin-left: 89px;
+    color: #141517;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    text-decoration: none;
+    border-bottom: 1px solid #141517;
+    margin-bottom: 0; }
+
+.adv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding-top: 185px;
+  padding-right: 433px;
+  min-width: 1024px;
+  min-height: 860px;
+  background-color: rgba(62, 120, 167, 0.867);
+  background-image: url("../img/adv-bg-desk.png");
+  background-size: cover; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .adv {
+      background-image: url("../img/adv-bg-desk@2x.png");
+      background-size: cover; } }
+  .adv .adv__title {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 80px;
+    margin: 0;
+    color: #FFFFFF;
+    width: 412px; }
+  .adv .adv__description {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    width: 376px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-right: 35px;
+    margin-bottom: 39px; }
+  .adv .adv__button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    width: 340px;
+    height: 75px;
+    background-color: #FE7865;
+    margin-right: 70px;
+    box-sizing: border-box;
+    padding-left: 49px;
+    position: relative; }
+    .adv .adv__button::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: url("../img/arrow-down.svg") no-repeat;
+      background-size: contain;
+      top: 30px;
+      right: 31px; }
