@@ -1,0 +1,101 @@
+.country-card {
+ display: flex;
+
+  .country-card__title {
+    @include title-font;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 175px;
+      height: 2.92px;
+      background-color: $basic-red;
+      bottom: -30px;
+      left: 0;
+    }
+  }
+
+  .country-card__text {
+    @include desc-font;
+    width: 370px;
+    height: auto;
+  }
+
+  .country-card__button {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 75px;
+    background-color: $basic-red;
+  }
+
+  .country-card__review {
+    display: block;
+    background-color: #FFFFFF;
+    width: 382px;
+    height: min-content;
+    padding: 30px;
+    margin-left: 418px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 596px;
+      z-index: -1;
+      right: 318px;
+      top: -114px
+    }
+
+    &--greece::before {
+      background-image: url("../img/greece-review-desk.png");
+      background-size: cover;
+
+      @media (min-resolution: 144dpi),
+        (min-resolution: 1.5dppx) {
+        background-image: url("../img/greece-review-desk@2x.png");
+        background-size: cover;
+      }
+    }
+  }
+
+  .country-card__review-title {
+    font-family: $custom-font;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
+    position: relative;
+    margin: 0;
+    margin-bottom: 32px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 68px;
+      height: 0.73px;
+      background-color: $basic-red;
+      bottom: -14px;
+      left: 0;
+    }
+  }
+
+  .country-card__review-text {
+    @include desc-font;
+    color: rgba(44, 46, 63, 0.7);
+    margin-bottom: 44px;
+  }
+
+  .country-card__review-name {
+    font-family: $custom-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 84px;
+  }
+}

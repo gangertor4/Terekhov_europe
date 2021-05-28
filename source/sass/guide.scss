@@ -1,0 +1,28 @@
+.guide {
+  .guide__list {
+    list-style: none;
+    padding: 0;
+    padding-bottom: 15px;
+    margin-right: 35%;
+    margin-left: auto;
+    display: flex;
+    width: 899px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(44, 46, 63, 0.3);;
+  }
+
+  .guide__list-item a {
+    text-decoration: none;
+    font-family: $custom-font;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(44, 46, 63, 0.3);
+  }
+
+  .guide__list-item--current a {
+    color: $basic-red;
+  }
+
+  
+}

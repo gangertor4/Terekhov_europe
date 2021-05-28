@@ -58,8 +58,6 @@ body {
     font-weight: 400;
     font-size: 18px;
     line-height: 32px;
-    text-decoration: none;
-    border-bottom: 1px solid #141517;
     margin-bottom: 0; }
 
 .adv {
@@ -122,3 +120,207 @@ body {
       background-size: contain;
       top: 30px;
       right: 31px; }
+
+.places {
+  max-width: 1170px;
+  margin: 0 auto;
+  margin-top: 199px; }
+  .places .places__title {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 80px;
+    width: 358px;
+    margin-bottom: 64px;
+    position: relative; }
+    .places .places__title::after {
+      content: "";
+      position: absolute;
+      width: 228.51px;
+      height: 4px;
+      background-color: #FE7865;
+      bottom: -30px;
+      left: 0; }
+  .places .places__description {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    width: 350px;
+    margin-top: 0; }
+  .places .places__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    max-width: 1170px;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .places .places__item {
+    position: relative;
+    width: 350px;
+    margin-bottom: 101px; }
+  .places .places__item:not(:nth-child(3n)):not(:nth-child(5n)) {
+    margin-right: 60px; }
+  .places .places__name {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    width: 215px;
+    height: 63px;
+    background-color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 368px;
+    left: 68px; }
+  .places .places__button {
+    display: none; }
+  .places .places__item:hover .places__button {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 266px;
+    height: 77px;
+    border: 1px solid #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+    top: 177px;
+    left: 42px;
+    z-index: 3; }
+  .places .places__item:hover::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 430px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(20, 21, 23, 0.6); }
+
+.guide .guide__list {
+  list-style: none;
+  padding: 0;
+  padding-bottom: 15px;
+  margin-right: 35%;
+  margin-left: auto;
+  display: flex;
+  width: 899px;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(44, 46, 63, 0.3); }
+
+.guide .guide__list-item a {
+  text-decoration: none;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(44, 46, 63, 0.3); }
+
+.guide .guide__list-item--current a {
+  color: #FE7865; }
+
+.country-card {
+  display: flex; }
+  .country-card .country-card__title {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 80px;
+    position: relative; }
+    .country-card .country-card__title::after {
+      content: "";
+      position: absolute;
+      width: 175px;
+      height: 2.92px;
+      background-color: #FE7865;
+      bottom: -30px;
+      left: 0; }
+  .country-card .country-card__text {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    width: 370px;
+    height: auto; }
+  .country-card .country-card__button {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 75px;
+    background-color: #FE7865; }
+  .country-card .country-card__review {
+    display: block;
+    background-color: #FFFFFF;
+    width: 382px;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    padding: 30px;
+    margin-left: 418px;
+    position: relative; }
+    .country-card .country-card__review::before {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 596px;
+      z-index: -1;
+      right: 318px;
+      top: -114px; }
+    .country-card .country-card__review--greece::before {
+      background-image: url("../img/greece-review-desk.png");
+      background-size: cover; }
+      @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+        .country-card .country-card__review--greece::before {
+          background-image: url("../img/greece-review-desk@2x.png");
+          background-size: cover; } }
+  .country-card .country-card__review-title {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
+    position: relative;
+    margin: 0;
+    margin-bottom: 32px; }
+    .country-card .country-card__review-title::after {
+      content: "";
+      position: absolute;
+      width: 68px;
+      height: 0.73px;
+      background-color: #FE7865;
+      bottom: -14px;
+      left: 0; }
+  .country-card .country-card__review-text {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: rgba(44, 46, 63, 0.7);
+    margin-bottom: 44px; }
+  .country-card .country-card__review-name {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 84px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0); }
