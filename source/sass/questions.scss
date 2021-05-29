@@ -1,0 +1,118 @@
+.questions {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 844px;
+    height: 455px;
+    background-image: url("../img/quest-bg.png");
+    background-size: cover;
+
+    @media (min-resolution: 144dpi),
+        (min-resolution: 1.5dppx) {
+        background-image: url("../img/quest-bg@2x.png");
+        background-size: cover;
+      }
+
+    z-index: -1;
+    top: -70px;
+    left: 387px;
+  }
+
+  .questions__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 656px;
+    height: 315px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0px 4px 30px rgba(41, 54, 66, 0.1);
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-right: 353px;
+    margin-left: auto;
+    margin-top: 238px;
+  }
+  .questions__title {
+    font-family: $custom-font;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  .questions__text {
+    @include desc-font;
+    line-height: 24px;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+
+  .questions__wrapper {
+    position: relative;
+  }
+
+  .questions__input {
+    width: 269px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid $transp-grey;
+    font-family: $custom-font;
+    font-size: 16px;
+    font-weight: 400;
+    color: $dark-black;
+  }
+
+  .questions__input::placeholder {
+    font-family: $custom-font;
+    font-size: 14px;
+    font-weight: 400;
+    color: $dark-black;
+  }
+
+  .questions__phone {
+    padding-left: 26px;
+    margin-right: 19px;
+  }
+
+  .questions__wrapper label {
+    position: absolute;
+    color: $basic-red;
+    width: 6px;
+    height: 6px;
+    font-size: 17px;
+    font-weight: 700;
+    top: 6.25px;
+    left: 15px;
+  }
+
+  .questions__email {
+    padding-left: 15px;
+  }
+
+  .questions__button {
+    font-family: $custom-font;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 176px;
+    height: 50px;
+    background-color: $basic-red;
+    margin-top: 25px;
+  }
+
+  .questions__button:hover,
+  .questions__button:focus {
+    background-color: $hover-orange;
+  }
+}

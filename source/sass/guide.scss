@@ -1,4 +1,25 @@
 .guide {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 1443.66px;
+    height: 1088.9px;
+    background-image: url("../img/map-bg.png");
+
+    @media (min-resolution: 144dpi),
+        (min-resolution: 1.5dppx) {
+        background-image: url("../img/map-bg@2x.png");
+        background-size: contain;
+        
+      }
+
+    top: 110px;
+    left: 238px;
+    z-index: -10;
+  }
+
   .guide__list {
     list-style: none;
     padding: 0;
@@ -8,7 +29,7 @@
     display: flex;
     width: 899px;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(44, 46, 63, 0.3);;
+    border-bottom: 1px solid $transp-grey;
   }
 
   .guide__list-item a {
@@ -17,12 +38,16 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    color: rgba(44, 46, 63, 0.3);
+    color: $transp-grey;
   }
 
   .guide__list-item--current a {
     color: $basic-red;
   }
 
-  
+  .guide__card {
+    max-width: 1240px;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
 }

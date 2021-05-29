@@ -11,3 +11,38 @@
   font-size: 16px;
   line-height: 28px;
 }
+
+@mixin footer-title {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+@mixin footer-text {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+@mixin review-photo($photo-url, $photo-urlx2) {
+  background-image: $photo-url;
+  background-size: cover;
+
+  @media (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx) {
+    background-image: $photo-urlx2;
+    background-size: cover;
+  }
+}
+
+@mixin review-avatar($avatar-url, $avatar-urlx2) {
+  background-image: $avatar-url;
+
+    @media (min-resolution: 144dpi),
+      (min-resolution: 1.5dppx) {
+      background-image: $avatar-urlx2;
+      background-size: cover;
+    }
+}

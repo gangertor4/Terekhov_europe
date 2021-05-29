@@ -62,4 +62,9 @@
       right: 31px;
     }
   }
+
+  .adv__button:hover,
+  .adv__button:focus {
+    background-color: $hover-orange;
+  }
 }

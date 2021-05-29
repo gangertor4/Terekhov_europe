@@ -1,0 +1,21 @@
+.next {
+  .next__title {
+    @include footer-title;
+    margin-bottom: 20px;
+  }
+
+  .next__list {
+    list-style: none;
+    width: 350px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+    grid-row-gap: 10px;
+    grid-column-gap: 51px;
+  }
+
+  .next__item {
+    @include footer-text;
+    color: $footer-grey;
+  }
+}

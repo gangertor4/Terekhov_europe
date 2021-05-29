@@ -30,6 +30,11 @@
     margin-right: 40px;
   }
 
+  .header__nav-item a:hover,
+  .header__nav-item a:focus {
+    color: $basic-red;
+  }
+
   .header__phone {
     margin-left: 89px;
     color: $dark-black;
@@ -37,5 +42,27 @@
     font-size: 18px;
     line-height: 32px;
     margin-bottom: 0;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background-image: url("../img/phone-black.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: -25px;
+      top: 6px;
+    }
+  }
+
+  .header__phone:hover,
+  .header__phone:focus {
+    color: $basic-red;
+
+    &::before {
+      background-image: url("../img/phone-red.svg");
+    }
   }
 }

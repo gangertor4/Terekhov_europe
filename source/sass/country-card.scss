@@ -1,5 +1,6 @@
 .country-card {
  display: flex;
+//  align-items: center;
 
   .country-card__title {
     @include title-font;
@@ -20,9 +21,13 @@
     @include desc-font;
     width: 370px;
     height: auto;
+    margin-bottom: 50px;
   }
 
   .country-card__button {
+    font-family: $custom-font;
+    font-size: 12px;
+    font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -34,11 +39,17 @@
     background-color: $basic-red;
   }
 
+  .country-card__button:hover,
+  .country-card__button:focus {
+    background-color: $hover-orange;
+  }
+
   .country-card__review {
+    align-self: center;
     display: block;
     background-color: #FFFFFF;
-    width: 382px;
-    height: min-content;
+    max-width: 382px;
+    height: max-content;
     padding: 30px;
     margin-left: 418px;
     position: relative;
@@ -54,14 +65,23 @@
     }
 
     &--greece::before {
-      background-image: url("../img/greece-review-desk.png");
-      background-size: cover;
+      @include review-photo(url("../img/greece-review-desk.png"), url("../img/greece-review-desk@2x.png"))
+    }
 
-      @media (min-resolution: 144dpi),
-        (min-resolution: 1.5dppx) {
-        background-image: url("../img/greece-review-desk@2x.png");
-        background-size: cover;
-      }
+    &--albania::before {
+      @include review-photo(url("../img/albania-review-desk.png"), url("../img/albania-review-desk@2x.png"))
+    }
+
+    &--maked::before {
+      @include review-photo(url("../img/maked-review-desk.png"), url("../img/maked-review-desk@2x.png"))
+    }
+
+    &--cherno::before {
+      @include review-photo(url("../img/cherno-review-desk.png"), url("../img/cherno-review-desk@2x.png"))
+    }
+
+    &--croa::before {
+      @include review-photo(url("../img/croa-review-desk.png"), url("../img/croa-review-desk@2x.png"))
     }
   }
 
@@ -96,6 +116,49 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    margin-left: 84px;
+    margin-left: 54px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      left: -54px;
+      top: -10px;
+    }
+  }
+
+  //AVATARS FOR REVIEWS
+
+  .country-card__review--greece {
+    .country-card__review-name::before {
+      @include review-avatar(url("../img/greece-review-avt.png"), url("../img/greece-review-avt@2x.png"))
+    }
+  }
+
+  .country-card__review--albania {
+    .country-card__review-name::before {
+      @include review-avatar(url("../img/albania-review-avt.png"), url("../img/albania-review-avt@2x.png"))
+    }
+  }
+
+  .country-card__review--maked {
+    .country-card__review-name::before {
+      @include review-avatar(url("../img/maked-review-avt.png"), url("../img/maked-review-avt@2x.png"))
+    }
+  }
+
+  .country-card__review--cherno {
+    .country-card__review-name::before {
+      @include review-avatar(url("../img/cherno-review-avt.png"), url("../img/cherno-review-avt@2x.png"))
+    }
+  }
+
+  .country-card__review--croa {
+    .country-card__review-name::before {
+      @include review-avatar(url("../img/croa-review-avt.png"), url("../img/croa-review-avt@2x.png"))
+    }
   }
 }
