@@ -32,7 +32,7 @@
     border-bottom: 1px solid $transp-grey;
   }
 
-  .guide__list-item a {
+  .guide__list-item {
     text-decoration: none;
     font-family: $custom-font;
     font-weight: 500;
@@ -41,7 +41,7 @@
     color: $transp-grey;
   }
 
-  .guide__list-item--current a {
+  .guide__list-item--current {
     color: $basic-red;
   }
 

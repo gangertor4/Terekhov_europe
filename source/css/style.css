@@ -253,14 +253,14 @@ body {
     width: 899px;
     justify-content: space-between;
     border-bottom: 1px solid rgba(44, 46, 63, 0.3); }
-  .guide .guide__list-item a {
+  .guide .guide__list-item {
     text-decoration: none;
     font-family: "Montserrat", "Arial", sans-serif;
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
     color: rgba(44, 46, 63, 0.3); }
-  .guide .guide__list-item--current a {
+  .guide .guide__list-item--current {
     color: #FE7865; }
   .guide .guide__card {
     max-width: 1240px;
