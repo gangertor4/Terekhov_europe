@@ -5,6 +5,13 @@
   line-height: 80px;
 }
 
+@mixin title-font-mobile {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
 @mixin desc-font {
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 400;
@@ -45,4 +52,11 @@
       background-image: $avatar-urlx2;
       background-size: cover;
     }
+}
+
+@mixin mobile-btn {
+  width: 288px;
+  height: 50px;
+  font-size: 10px;
+  font-weight: 500;
 }

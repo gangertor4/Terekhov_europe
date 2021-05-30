@@ -1,4 +1,4 @@
-const placesBtn = document.querySelectorAll('.places__button');
+const placesBtn = document.querySelectorAll('.places__item');
 const guide = document.querySelector('.guide');
 const guideItems = guide.querySelectorAll('.guide__list-item');
 const guideCards = guide.querySelectorAll('.country-card');
@@ -27,3 +27,24 @@ for (let i = 0; i < guideItems.length; i++) {
     guideCards[i].classList.remove('visually-hidden')
   })
 }
+
+const btnToggle = document.querySelector('.header__toggle');
+const navMenu = document.querySelector('.header__nav-list');
+const logo = document.querySelector('.header__logo')
+
+btnToggle.addEventListener('click', function () {
+  console.log("SHIT")
+  if (btnToggle.classList.contains('header__toggle--burger')) {
+    btnToggle.classList.remove('header__toggle--burger');
+    btnToggle.classList.add('header__toggle--cross');
+    navMenu.classList.remove('header__nav-list--closed');
+    navMenu.classList.add('header__nav-list--opened');
+    logo.classList.add('visually-hidden');
+  } else {
+    btnToggle.classList.remove('header__toggle--cross');
+    btnToggle.classList.add('header__toggle--burger');
+    navMenu.classList.remove('header__nav-list--opened');
+    navMenu.classList.add('header__nav-list--closed');
+    logo.classList.remove('visually-hidden');
+}
+})

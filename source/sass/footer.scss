@@ -6,3 +6,11 @@
   margin-top: 240px;
   padding-bottom: 75px;
 }
+
+@media (max-width: $mobile-width) {
+  .footer {
+    flex-direction: column;
+    margin-top: 70px;
+    padding-bottom: 25px;
+  }
+}

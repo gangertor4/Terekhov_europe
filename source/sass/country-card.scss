@@ -1,6 +1,5 @@
 .country-card {
  display: flex;
-//  align-items: center;
 
   .country-card__title {
     @include title-font;
@@ -130,8 +129,6 @@
     }
   }
 
-  //AVATARS FOR REVIEWS
-
   .country-card__review--greece {
     .country-card__review-name::before {
       @include review-avatar(url("../img/greece-review-avt.png"), url("../img/greece-review-avt@2x.png"))
@@ -159,6 +156,104 @@
   .country-card__review--croa {
     .country-card__review-name::before {
       @include review-avatar(url("../img/croa-review-avt.png"), url("../img/croa-review-avt@2x.png"))
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .country-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .country-card__title {
+      @include title-font-mobile;
+      width: fit-content;
+      margin: 0 auto;
+      margin-bottom: 20px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .country-card__text {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .country-card__button {
+      @include mobile-btn;
+      margin: 0 auto;
+      margin-bottom: 100px;
+    }
+
+    .country-card__review {
+      margin: 0 auto;
+      width: calc(100% - 52px);
+      box-sizing: border-box;
+      padding: 30px 20px 34px 20px;
+      
+      &::before {
+        width: 320px;
+        height: 415px;
+        margin: 0 auto; 
+        top: -50px;
+        right: -50%;
+        left: -50%;
+      }
+
+      &--greece::before {
+        @include review-photo(url("../img/greece-card-desk.png"), url("../img/greece-card-desk@2x.png"))
+      }
+  
+      &--albania::before {
+        @include review-photo(url("../img/albania-card-desk.png"), url("../img/albania-card-desk@2x.png"))
+      }
+  
+      &--maked::before {
+        @include review-photo(url("../img/maked-card-desk.png"), url("../img/maked-card-desk@2x.png"))
+      }
+  
+      &--cherno::before {
+        @include review-photo(url("../img/cherno-card-desk.png"), url("../img/cherno-card-desk@2x.png"))
+      }
+  
+      &--croa::before {
+        @include review-photo(url("../img/croa-card-desk.png"), url("../img/croa-card-desk@2x.png"))
+      }
+    }
+
+    .country-card__review-title {
+      font-weight: 500;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 31px;
+
+      &::after {
+        bottom: -5px;
+        left: 35%;
+        // right: 5%;
+      }
+    }
+
+    .country-card__review-text {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 68px;
+    }
+
+    .country-card__review-name {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      margin-top: 68px;
+
+      &::before {
+        top: -48px;
+        left: 48px;
+      }
     }
   }
 }

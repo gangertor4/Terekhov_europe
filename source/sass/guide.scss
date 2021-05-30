@@ -1,24 +1,24 @@
 .guide {
   position: relative;
 
-  &::after {
-    content: "";
-    position: absolute;
-    width: 1443.66px;
-    height: 1088.9px;
-    background-image: url("../img/map-bg.png");
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 1443.66px;
+  //   height: 1088.9px;
+  //   background-image: url("../img/map-bg.png");
 
-    @media (min-resolution: 144dpi),
-        (min-resolution: 1.5dppx) {
-        background-image: url("../img/map-bg@2x.png");
-        background-size: contain;
+  //   @media (min-resolution: 144dpi),
+  //       (min-resolution: 1.5dppx) {
+  //       background-image: url("../img/map-bg@2x.png");
+  //       background-size: contain;
         
-      }
+  //     }
 
-    top: 110px;
-    left: 238px;
-    z-index: -10;
-  }
+  //   top: 110px;
+  //   left: 238px;
+  //   z-index: -10;
+  // }
 
   .guide__list {
     list-style: none;
@@ -49,5 +49,28 @@
     max-width: 1240px;
     margin: 0 auto;
     margin-top: 80px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .guide {
+    .guide__wrapper {
+      overflow: hidden;
+    }
+
+    .guide__list {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      margin-left: 15px;
+    }
+
+    .guide__list-item {
+      display: inline-block;
+    }
+
+    // .guide__card {
+    //   width: 288px;
+    // }
   }
 }

@@ -59,6 +59,7 @@
     position: absolute;
     top: 368px;
     left: 68px;
+    z-index: 2;
   }
 
   .places__button {
@@ -85,7 +86,7 @@
     z-index: 3;
   }
 
-  .places__item:hover::before {
+  .places__link:hover::before {
     content: "";
     position: absolute;
     width: 350px;
@@ -94,5 +95,56 @@
     left: 0;
     z-index: 2;
     background-color: rgba(20, 21, 23, 0.6);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .places {
+    max-width: 288px;
+    margin-top: 108px;
+
+    .places__title {
+      @include title-font-mobile;
+      width: 288px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .places__description {
+      width: 288px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .places__list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .places__item {
+      width: 288px;
+      height: 425px;
+      margin-bottom: 35px;
+    }
+
+    .places__link:hover::before,
+    .places__item:hover .places__button {
+      display: none;
+    }
+
+    .places__img {
+      width: 288px;
+      height: 425px;
+    }
+
+    .places__name {
+      top: 368px;
+      left: 36px;
+    }
   }
 }

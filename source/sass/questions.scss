@@ -116,3 +116,53 @@
     background-color: $hover-orange;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .questions {
+    margin-top: 50px;
+    padding-top: 50px;
+    background-color: #FBF8F8;
+
+    &::before {
+      display: none;
+    }
+
+    .questions__form {
+      box-shadow: none;
+      margin-top: 0;
+      padding: 0;
+      width: 320px;
+      height: 441px;
+      background-color: #FBF8F8;
+    }
+
+    .questions__title {
+      @include title-font-mobile;
+      width: 288px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    .questions__text {
+      width: 288px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    .questions__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .questions__phone {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    .questions__button {
+      @include mobile-btn;
+    }
+  }
+}

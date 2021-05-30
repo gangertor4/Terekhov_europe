@@ -13,8 +13,9 @@
 <body>
   <header class="header">
     <img src="img/way-logo.svg" alt="" srcset="" class="header__logo" width="57.02" height="22">
-    <div class="header__menu">
-      <ul class="header__nav-list">
+    <nav class="header__menu">
+      <button type="button" class="header__toggle header__toggle--burger"></button>
+      <ul class="header__nav-list header__nav-list--closed">
         <li class="header__nav-item"><a href="#travel">О путешествии</a></li>
         <li class="header__nav-item"><a href="#prices">Цены</a></li>
       </ul>
@@ -32,54 +33,66 @@
       <p class="places__description">Вы можете выбрать полный тур или частичный, с посещением первых 3 мест</p>
       <ul class="places__list">
         <li class="places__item">
-          <picture>
-            <img src="img/greece-card-desk.png" srcset="img/greece-card-desk@2x.png 2x" alt="Виды Греции" class="places__img" width="350" height="430">
-          </picture>
-          <span class="places__name">Греция</span>
-          <a href="#tours" class="places__button">смотреть подробнее</a>
+          <a href="#tours" class="places__link">
+            <picture>
+              <img src="img/greece-card-desk.png" srcset="img/greece-card-desk@2x.png 2x" alt="Виды Греции" class="places__img" width="350" height="430">
+            </picture>
+            <span class="places__name">Греция</span>
+            <span class="places__button">смотреть подробнее</span>
+          </a>
         </li>
         <li class="places__item">
-          <picture>
-            <img src="img/albania-card-desk.png" srcset="img/albania-card-desk@2x.png 2x" alt="Виды Албании" class="places__img" width="350" height="430">
-          </picture>
-          <span class="places__name">Албания</span>
-          <a href="#tours" class="places__button">смотреть подробнее</a>
+          <a href="#tours" class="places__link">
+            <picture>
+              <img src="img/albania-card-desk.png" srcset="img/albania-card-desk@2x.png 2x" alt="Виды Албании" class="places__img" width="350" height="430">
+            </picture>
+            <span class="places__name">Албания</span>
+            <span class="places__button">смотреть подробнее</span>
+          </a>
         </li>
         <li class="places__item">
-          <picture>
-            <img src="img/maked-card-desk.png" srcset="img/maked-card-desk@2x.png 2x" alt="Виды Македонии" class="places__img" width="350" height="430">
-          </picture>
-          <span class="places__name">Македония</span>
-          <a href="#tours" class="places__button">смотреть подробнее</a>
+          <a href="#tours" class="places__link">
+            <picture>
+              <img src="img/maked-card-desk.png" srcset="img/maked-card-desk@2x.png 2x" alt="Виды Македонии" class="places__img" width="350" height="430">
+            </picture>
+            <span class="places__name">Македония</span>
+            <span class="places__button">смотреть подробнее</span>
+          </a>
         </li>
         <li class="places__item">
-          <picture>
-            <img src="img/cherno-card-desk.png" srcset="img/cherno-card-desk@2x.png 2x" alt="Виды Черногории" class="places__img" width="350" height="430">
-          </picture>
-          <span class="places__name">Черногория</span>
-          <a href="#tours" class="places__button">смотреть подробнее</a>
+          <a href="#tours" class="places__link">
+            <picture>
+              <img src="img/cherno-card-desk.png" srcset="img/cherno-card-desk@2x.png 2x" alt="Виды Черногории" class="places__img" width="350" height="430">
+            </picture>
+            <span class="places__name">Черногория</span>
+            <span class="places__button">смотреть подробнее</span>
+          </a>
         </li>
         <li class="places__item">
-          <picture>
-            <img src="img/croa-card-desk.png" srcset="img/croa-card-desk@2x.png 2x" alt="Виды Хорватии" class="places__img" width="350" height="430">
-          </picture>
-          <span class="places__name">Хорватия</span>
-          <a href="#tours" class="places__button">смотреть подробнее</a>
+          <a href="#tours" class="places__link">
+            <picture>
+              <img src="img/croa-card-desk.png" srcset="img/croa-card-desk@2x.png 2x" alt="Виды Хорватии" class="places__img" width="350" height="430">
+            </picture>
+            <span class="places__name">Хорватия</span>
+            <span class="places__button">смотреть подробнее</span>
+          </a>
         </li>
       </ul>
     </section>
     <section class="guide" id="tours">
-      <ul class="guide__list">
-        <li><a href="#" class="guide__list-item guide__list-item--current">Греция</a></li>
-        <li><a href="#" class="guide__list-item">Албания</a></li>
-        <li><a href="#" class="guide__list-item">Македония</a></li>
-        <li><a href="#" class="guide__list-item">Черногория</a></li>
-        <li><a href="#" class="guide__list-item">Хорватия</a></li>
-      </ul>
-      <div class="guide__card country-card visually-hidden">
+      <div class="guide__wrapper">
+        <ul class="guide__list">
+          <li><a href="#" class="guide__list-item guide__list-item--current">Греция</a></li>
+          <li><a href="#" class="guide__list-item">Албания</a></li>
+          <li><a href="#" class="guide__list-item">Македония</a></li>
+          <li><a href="#" class="guide__list-item">Черногория</a></li>
+          <li><a href="#" class="guide__list-item">Хорватия</a></li>
+        </ul>
+      </div>
+      <div class="guide__card country-card country-card--current">
         <div class="country-card__card">
           <h2 class="country-card__title">Греция</h2>
-          <p class="country-card__text">На севере Греции находится один из крупнейших комплексов монастырей, расположенных на вершинах скал. Название его «Метеора» буквально переводится как «висящие в воздухе». Этот монастырь основная цель нашего путешествия в Греции. После покарения скал из песчанника и обломочной горной породы, достигающих в высоту 600 метров, наградой будет неописуемая красота природы и атмосфера, царящая в монастырях Метеоры. </p>
+          <p class="country-card__text">На севере Греции находится один из крупнейших комплексов монастырей, расположенных на вершинах скал. Название его «Метеора» буквально переводится как «висящие в воздухе». Этот монастырь основная цель нашего путешествия в Греции. После покорения скал из песчанника и обломочной горной породы, достигающих в высоту 600 метров, наградой будет неописуемая красота природы и атмосфера, царящая в монастырях Метеоры. </p>
           <a href="" class="country-card__button">купить тур сейчас</a>
         </div>
         <blockquote class="country-card__review country-card__review--greece">
@@ -88,7 +101,7 @@
           <span class="country-card__review-name">Влада Голицина</span>
         </blockquote>
       </div>
-      <div class="guide__card country-card country-card--current visually-hidden">
+      <div class="guide__card country-card visually-hidden">
         <div class="country-card__card">
           <h2 class="country-card__title">Албания</h2>
           <p class="country-card__text">В Албании мы посетим Курорт Ксамиль. Этот курорт поразит вас чистейшей водой и удивительным пляжем. Вначале кажется, что на пляже вас встречает обычный, правда невероятно белоснежный и слишком крупный песок. Однако, присмотревшись, можно понять, что это не песок, а камни, перетёртые до такого мелкого состояния. </p>
@@ -124,7 +137,7 @@
           <span class="country-card__review-name">Анастасия Мей</span>
         </blockquote>
       </div>
-      <div class="guide__card country-card ">
+      <div class="guide__card country-card visually-hidden">
         <div class="country-card__card">
           <h2 class="country-card__title">Хорватия</h2>
           <p class="country-card__text">В Хорватии мы посетим необычайную пещеру названную Бередине. Ее подземный мир увлечет вас на 80-ти метровую глубину через 5 освещенных залов, украшенных удивительными нерукотворными скульптурами —  сталактитами и сталагмитами —  формировавшимися тысячи и тысячи лет.</p>
@@ -185,21 +198,27 @@
     <section class="next">
       <h3 class="next__title">Следующие путешествия</h3>
       <ul class="next__list">
-        <li class="next__item">Марсель</li>
-        <li class="next__item">Сардиния</li>
-        <li class="next__item">Корс</li>
-        <li class="next__item">Ним</li>
-        <li class="next__item">Палермо</li>
-        <li class="next__item">Ницца</li>
-        <li class="next__item">Монпелье</li>
-        <li class="next__item">Катания</li>
-        <li class="next__item">Монако</li>
-        <li class="next__item">Барселона</li>
-        <li class="next__item">Неаполь</li>
-        <li class="next__item">Динь-ле-Бен</li>
-        <li class="next__item">Пальма</li>
-        <li class="next__item">Рим</li>
-        <li class="next__item">Гренобль</li>
+        <div class="next__column1">
+          <li class="next__item">Марсель</li>
+          <li class="next__item">Ним</li>
+          <li class="next__item">Монпелье</li>
+          <li class="next__item">Барселона</li>
+          <li class="next__item">Пальма</li>
+        </div>
+        <div class="next__column2">
+          <li class="next__item">Сардиния</li>
+          <li class="next__item">Палермо</li>
+          <li class="next__item">Катания</li>
+          <li class="next__item">Неаполь</li>
+          <li class="next__item">Рим</li>
+        </div>
+        <div class="next__column3">
+          <li class="next__item">Корс</li>
+          <li class="next__item">Ницца</li>
+          <li class="next__item">Монако</li>
+          <li class="next__item">Динь-ле-Бен</li>
+          <li class="next__item">Гренобль</li>
+        </div>
       </ul>
     </section>
     <section class="contacts">

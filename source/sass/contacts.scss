@@ -54,3 +54,42 @@
     }
   }
 }
+
+@media (max-width: $mobile-width) {
+  .contacts {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 288px;
+
+    &::before {
+      width: 288px;
+      height: 1px;
+      left: 0;
+      top: -30px;
+    }
+
+    .contacts__title {
+      margin: 0 auto;
+      margin-bottom: 25px;
+    }
+
+    .contacts__link--email {
+      width: 258px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      padding: 0;
+      box-sizing: border-box;
+      text-align: right;
+      font-size: 14px;
+    }
+
+    .contacts__link--phone {
+      width: 209px;
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+      text-align: right;
+      font-size: 16px;
+    }
+  }
+}

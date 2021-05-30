@@ -10,12 +10,49 @@
     padding: 0;
     display: grid;
     grid-template-columns: max-content max-content max-content;
-    grid-row-gap: 10px;
     grid-column-gap: 51px;
   }
 
   .next__item {
     @include footer-text;
     color: $footer-grey;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .next {
+    .next__title {
+      width: fit-content;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    .next__list {
+      grid-template-areas: "col1 col2"
+                            "col3 col3";
+      grid-template-columns: repeat(2, 134px);
+      text-align: center;
+      grid-row-gap: 20px;
+      width: 320px;
+      margin: 0 auto;
+    }
+
+    .next__column1 {
+      grid-area: col1;
+    }
+
+    .next__column2 {
+      grid-area: col2;
+    }
+
+    .next__column3 {
+      grid-area: col3;
+      margin: 0 auto;
+    }
+
+    .next__item {
+      font-size: 14px;
+    }
   }
 }

@@ -24,3 +24,30 @@
     width: 400px;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .more {
+    margin: 0 auto;
+    margin-top: 50px;
+
+    &::before {
+      width: 288px;
+      height: 1px;
+      left: 0;
+      top: -20px;
+    }
+
+    .more__title {
+      width: fit-content;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    .more__text {
+      width: 288px;
+      font-size: 14px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
