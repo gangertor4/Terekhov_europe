@@ -69,6 +69,53 @@
   }
 }
 
+@media (max-width: $tablet-width) {
+  .adv {
+    min-width: 768px;
+    min-height: 344px;
+    background-image: url("../img/adv-bg-tablet.png");
+    background-size: cover;
+
+    @media (min-resolution: 144dpi),
+      (min-resolution: 1.5dppx) {
+      background-image: url("../img/adv-bg-tablet@2x.png");
+      background-size: cover;
+      }
+    
+    padding: 0;
+
+    .adv__title {
+      @include title-font-tablet;
+      color: #FFFFFF;
+      width: 398px;
+      margin: 0 auto;
+      margin-top: 60px;
+      text-align: center;
+      position: relative;
+      }
+
+    .adv__description {
+      color: #FFFFFF;
+      width: 450px;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 15px;
+    }
+
+    .adv__button {
+      @include tablet-btn;
+      margin: 0 auto;
+      margin-top: 15px;
+      padding-left: 40px;
+      
+      &::after {
+        top: 18px;
+        right: 40px;
+      }
+    }
+  }
+  }
+
 @media (max-width: $mobile-width) {
   .adv {
     min-width: 320px;

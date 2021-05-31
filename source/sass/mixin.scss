@@ -12,6 +12,13 @@
   line-height: 36px;
 }
 
+@mixin title-font-tablet {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+}
+
 @mixin desc-font {
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 400;
@@ -59,4 +66,13 @@
   height: 50px;
   font-size: 10px;
   font-weight: 500;
+  letter-spacing: 2px
+}
+
+@mixin tablet-btn {
+  width: 250px;
+  height: 50px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px
 }

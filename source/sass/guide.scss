@@ -52,15 +52,27 @@
   }
 }
 
-@media (max-width: $mobile-width) {
+@media (max-width: $tablet-width) {
   .guide {
+    margin-top: 98px;
+
     .guide__wrapper {
-      overflow: hidden;
+      overflow: scroll;
     }
 
     .guide__list {
-      overflow-x: scroll;
-      overflow-y: hidden;
+      margin-left: 37px;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .guide {
+    .guide__wrapper {
+      overflow: scroll;
+    }
+
+    .guide__list {
       white-space: nowrap;
       margin-left: 15px;
     }
