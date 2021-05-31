@@ -57,23 +57,41 @@
     margin-top: 98px;
 
     .guide__wrapper {
-      overflow: scroll;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .guide__wrapper::-webkit-scrollbar {
+      display: none;
     }
 
     .guide__list {
       margin-left: 37px;
+      padding-right: 37px;
     }
   }
 }
 
 @media (max-width: $mobile-width) {
   .guide {
+    .guide__no-scroll {
+      overflow: hidden;
+    }
+
     .guide__wrapper {
-      overflow: scroll;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .guide__wrapper::-webkit-scrollbar {
+      display: none;
     }
 
     .guide__list {
-      white-space: nowrap;
       margin-left: 15px;
     }
 

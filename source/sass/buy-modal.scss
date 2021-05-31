@@ -1,0 +1,97 @@
+.buy-modal {
+  position: fixed;
+  width: 390px;
+  height: 444px;
+  box-sizing: border-box;
+  padding-top: 72px;
+  background-color: #FBF8F8;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 338px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 338px;
+    height: 444px;
+    background-image: url("../img/buy-modal-bg.png");
+    background-size: contain;
+    top: 0;
+    left: -338px;
+  }
+
+  .buy-modal__button {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    position: absolute;
+    border: none;
+    background-color: #FFFFFF;
+    background-image: url("../img/menu-cross.svg");
+    background-size: cover;
+    top: 20px;
+    right: 20px;
+  }
+
+  .buy-modal__title {
+    font-family: $custom-font;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+  .buy-modal__input {
+    width: 270px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid $transp-grey;
+    font-family: $custom-font;
+    font-size: 14px;
+    font-weight: 400;
+    color: $dark-black;
+  }
+
+  .buy-modal__input--phone {
+    padding-left: 26px;
+    margin-bottom: 20px;
+  }
+
+  .buy-modal__input--email {
+    padding-left: 15px;
+  }
+
+  .buy-modal__label {
+    position: absolute;
+    color: $basic-red;
+    width: 6px;
+    height: 6px;
+    font-size: 17px;
+    font-weight: 700;
+    top: 179px;
+    left: 74px;
+  }
+
+  .buy-modal__submit {
+    font-family: $custom-font;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 176px;
+    height: 50px;
+    background-color: $basic-red;
+    margin-top: 25px;
+  }
+}

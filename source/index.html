@@ -194,7 +194,7 @@
       </form>
     </section>
   </main>
-  <!-- <footer class="footer">
+  <footer class="footer">
     <section class="next">
       <h3 class="next__title">Следующие путешествия</h3>
       <ul class="next__list">
@@ -230,15 +230,19 @@
       <h3 class="more__title">Корпоративные путешествия</h3>
       <p class="more__text">Также вы можете заказать индивидуальное путешествие под вашу компанию. Подобные туры очень сближают компанию, помогают поддерживать корпоративный дух, а также являются оличным времяпрепровождением</p>
     </section>
-  </footer> -->
+  </footer>
   <section class="buy-modal visually-hidden">
-    <h2 class="buy-modal__title"></h2>
-    <input type="tel" name="" id="" value="Введите 10 цифр номера">
-    <input type="email" name="" id="" value="E-mail">
+    <h2 class="buy-modal__title">Купить тур</h2>
+    <button type="button" class="buy-modal__button"></button>
+    <label for="phone" class="buy-modal__label">*</label>
+    <input type="tel" name="phone" id="phone" value="+7 Введите 10 цифр номера" class="buy-modal__input buy-modal__input--phone">
+    <input type="email" name="" id="" value="E-mail" class="buy-modal__input buy-modal__input--email">
+    <button type="submit" class="buy-modal__submit">отправить</button>
   </section>
   <section class="success-modal visually-hidden">
     <p class="success-modal__text">Форма успешно отправлена, спасибо! :)</p>
   </section>
+  <div class="disabler visually-hidden"></div>
   <script src="js/script.js"></script>
 </body>
 </html>

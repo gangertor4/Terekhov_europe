@@ -48,3 +48,51 @@ btnToggle.addEventListener('click', function () {
     logo.classList.remove('visually-hidden');
 }
 })
+
+const pricesBtn = document.querySelectorAll('.prices__tariff-button');
+const cardBtn = document.querySelectorAll('.country-card__button');
+const buyModal = document.querySelector('.buy-modal');
+const closeModalBtn = buyModal.querySelector('.buy-modal__button');
+const disabler = document.querySelector('.disabler');
+
+const isEscEvent = function (evt) {
+  return evt.key === ('Escape' || 'Esc');
+};
+
+const closePopUp = function() {
+  buyModal.classList.add('visually-hidden');
+}
+
+const onPopUpEscKeydown = function (evt) {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    closePopUp();
+  }
+};
+
+const popUpAction = function (evt) {
+  evt.preventDefault();
+    buyModal.classList.remove('visually-hidden');
+    disabler.classList.remove('visually-hidden');
+    document.addEventListener('keydown', onPopUpEscKeydown);
+    closeModalBtn.addEventListener('click', function () {
+      closePopUp();
+    });
+    
+    disabler.addEventListener('click', function () {
+      closePopUp();
+      disabler.classList.add('visually-hidden');
+    });
+}
+
+pricesBtn.forEach(btn => {
+  btn.addEventListener('click', (evt) => {
+    popUpAction(evt);
+  })
+})
+
+cardBtn.forEach(btn => {
+  btn.addEventListener('click', (evt) => {
+    popUpAction(evt);
+  })
+})

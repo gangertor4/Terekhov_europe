@@ -20,8 +20,25 @@
   }
 }
 
+@media (max-width: $tablet-width) {
+  .next {
+    margin-left: 21px;
+
+    .next__list {
+      grid-column-gap: 30px;
+      width: fit-content;
+    }
+
+    .next__item {
+      font-size: 14px;
+    }
+  }
+}
+
 @media (max-width: $mobile-width) {
   .next {
+    margin: 0 auto;
+
     .next__title {
       width: fit-content;
       margin: 0 auto;
@@ -34,7 +51,7 @@
       grid-template-columns: repeat(2, 134px);
       text-align: center;
       grid-row-gap: 20px;
-      width: 320px;
+      width: 288px;
       margin: 0 auto;
     }
 

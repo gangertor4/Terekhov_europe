@@ -55,6 +55,16 @@
   }
 }
 
+@media (max-width: $tablet-width) {
+  .contacts {
+    margin-left: 100px;
+    margin-right: 44px;
+    .contacts__link {
+      font-size: 14px;
+    }
+  }
+}
+
 @media (max-width: $mobile-width) {
   .contacts {
     margin: 0 auto;

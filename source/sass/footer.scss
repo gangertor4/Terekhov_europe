@@ -7,8 +7,17 @@
   padding-bottom: 75px;
 }
 
+@media (max-width: $tablet-width) {
+  .footer {
+    flex-wrap: wrap;
+    margin-top: 155px;
+    padding-bottom: 50px;
+  }
+}
+
 @media (max-width: $mobile-width) {
   .footer {
+    width: 320px;
     flex-direction: column;
     margin-top: 70px;
     padding-bottom: 25px;
