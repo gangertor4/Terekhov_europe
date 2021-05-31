@@ -1815,7 +1815,8 @@ body {
     background-image: url("../img/menu-cross.svg");
     background-size: cover;
     top: 20px;
-    right: 20px; }
+    right: 20px;
+    cursor: pointer; }
   .buy-modal .buy-modal__title {
     font-family: "Montserrat", "Arial", sans-serif;
     font-size: 25px;

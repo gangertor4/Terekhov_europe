@@ -54,6 +54,7 @@ const cardBtn = document.querySelectorAll('.country-card__button');
 const buyModal = document.querySelector('.buy-modal');
 const closeModalBtn = buyModal.querySelector('.buy-modal__button');
 const disabler = document.querySelector('.disabler');
+const phoneInput = buyModal.querySelector('.buy-modal__input--phone');
 
 const isEscEvent = function (evt) {
   return evt.key === ('Escape' || 'Esc');
@@ -61,6 +62,7 @@ const isEscEvent = function (evt) {
 
 const closePopUp = function() {
   buyModal.classList.add('visually-hidden');
+  disabler.classList.add('visually-hidden');
 }
 
 const onPopUpEscKeydown = function (evt) {
@@ -74,6 +76,7 @@ const popUpAction = function (evt) {
   evt.preventDefault();
     buyModal.classList.remove('visually-hidden');
     disabler.classList.remove('visually-hidden');
+    phoneInput.focus();
     document.addEventListener('keydown', onPopUpEscKeydown);
     closeModalBtn.addEventListener('click', function () {
       closePopUp();
@@ -81,7 +84,6 @@ const popUpAction = function (evt) {
     
     disabler.addEventListener('click', function () {
       closePopUp();
-      disabler.classList.add('visually-hidden');
     });
 }
 
