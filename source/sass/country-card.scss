@@ -1,5 +1,6 @@
 .country-card {
  display: flex;
+ min-width: 0;
 
   .country-card__title {
     @include title-font;

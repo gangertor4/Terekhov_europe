@@ -35,6 +35,7 @@
         <li class="places__item">
           <a href="#tours" class="places__link">
             <picture>
+              <source type="image/webp" srcset="img/greece-card-desk.webp 1x, img/greece-card-desk@2x.webp 2x">
               <img src="img/greece-card-desk.png" srcset="img/greece-card-desk@2x.png 2x" alt="Виды Греции" class="places__img" width="350" height="430">
             </picture>
             <span class="places__name">Греция</span>
@@ -44,6 +45,7 @@
         <li class="places__item">
           <a href="#tours" class="places__link">
             <picture>
+              <source type="image/webp" srcset="img/albania-card-desk.webp 1x, img/albania-card-desk@2x.webp 2x">
               <img src="img/albania-card-desk.png" srcset="img/albania-card-desk@2x.png 2x" alt="Виды Албании" class="places__img" width="350" height="430">
             </picture>
             <span class="places__name">Албания</span>
@@ -53,6 +55,7 @@
         <li class="places__item">
           <a href="#tours" class="places__link">
             <picture>
+              <source type="image/webp" srcset="img/maked-card-desk.webp 1x, img/maked-card-desk@2x.webp 2x">
               <img src="img/maked-card-desk.png" srcset="img/maked-card-desk@2x.png 2x" alt="Виды Македонии" class="places__img" width="350" height="430">
             </picture>
             <span class="places__name">Македония</span>
@@ -62,6 +65,7 @@
         <li class="places__item">
           <a href="#tours" class="places__link">
             <picture>
+              <source type="image/webp" srcset="img/cherno-card-desk.webp 1x, img/cherno-card-desk@2x.webp 2x">
               <img src="img/cherno-card-desk.png" srcset="img/cherno-card-desk@2x.png 2x" alt="Виды Черногории" class="places__img" width="350" height="430">
             </picture>
             <span class="places__name">Черногория</span>
@@ -71,6 +75,7 @@
         <li class="places__item">
           <a href="#tours" class="places__link">
             <picture>
+              <source type="image/webp" srcset="img/croa-card-desk.webp 1x, img/croa-card-desk@2x.webp 2x">
               <img src="img/croa-card-desk.png" srcset="img/croa-card-desk@2x.png 2x" alt="Виды Хорватии" class="places__img" width="350" height="430">
             </picture>
             <span class="places__name">Хорватия</span>
@@ -89,7 +94,7 @@
           <li><a href="#" class="guide__list-item">Хорватия</a></li>
         </ul>
       </div>
-      <div class="guide__card country-card country-card--current">
+      <div class="guide__card country-card">
         <div class="country-card__card">
           <h2 class="country-card__title">Греция</h2>
           <p class="country-card__text">На севере Греции находится один из крупнейших комплексов монастырей, расположенных на вершинах скал. Название его «Метеора» буквально переводится как «висящие в воздухе». Этот монастырь основная цель нашего путешествия в Греции. После покорения скал из песчанника и обломочной горной породы, достигающих в высоту 600 метров, наградой будет неописуемая красота природы и атмосфера, царящая в монастырях Метеоры. </p>
@@ -182,13 +187,13 @@
       </div>
     </section>
     <section class="questions">
-      <form action="" method="post" class="questions__form">
+      <form method="GET" class="questions__form">
         <h3 class="questions__title">У Вас остались вопросы?</h3>
         <p class="questions__text">Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
         <div class="questions__wrapper">
           <label for="phone">*</label>
           <input type="tel" name="phone" id="phone" placeholder="+7 Введите 10 цифр номера" class="questions__input questions__phone">
-          <input type="email" name="" id="" placeholder="E-mail" class="questions__input questions__email">
+          <input type="email" name="email" id="email" placeholder="E-mail" class="questions__input questions__email">
         </div>
         <button type="submit" class="questions__button">отправить</button>
       </form>
@@ -234,10 +239,12 @@
   <section class="buy-modal visually-hidden">
     <h2 class="buy-modal__title">Купить тур</h2>
     <button type="button" class="buy-modal__button"></button>
-    <label for="phone" class="buy-modal__label">*</label>
-    <input type="tel" name="phone" id="phone" value="+7 Введите 10 цифр номера" class="buy-modal__input buy-modal__input--phone">
-    <input type="email" name="" id="" value="E-mail" class="buy-modal__input buy-modal__input--email">
-    <button type="submit" class="buy-modal__submit">отправить</button>
+    <form action="GET">
+      <label for="phone" class="buy-modal__label">*</label>
+      <input type="tel" name="phone" id="phone" value="+7 Введите 10 цифр номера" class="buy-modal__input buy-modal__input--phone">
+      <input type="email" name="" id="" value="E-mail" class="buy-modal__input buy-modal__input--email">
+      <button type="submit" class="buy-modal__submit">отправить</button>
+    </form>
   </section>
   <section class="success-modal visually-hidden">
     <p class="success-modal__text">Форма успешно отправлена, спасибо! :)</p>

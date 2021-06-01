@@ -12,6 +12,7 @@ const csso = require("postcss-csso");
 const uglify = require("gulp-uglify");
 const htmlmin = require("gulp-htmlmin");
 const del = require("del");
+const webp = require("gulp-webp");
 
 
 
@@ -53,6 +54,16 @@ const sprite = () => {
 }
 
 exports.sprite = sprite
+
+// WebP
+
+const createWebp = () => {
+  return gulp.src("source/img/**/*.{jpg,png}")
+    .pipe(webp({quality: 90}))
+    .pipe(gulp.dest("source/img"))
+}
+
+exports.createWebp = createWebp;
 
 //BUILD
 

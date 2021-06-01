@@ -48,6 +48,13 @@
     margin-bottom: 50px;
   }
 
+  form {
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .buy-modal__input {
     width: 270px;
     height: 50px;

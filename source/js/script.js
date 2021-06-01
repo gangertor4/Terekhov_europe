@@ -1,3 +1,4 @@
+
 const placesBtn = document.querySelectorAll('.places__item');
 const guide = document.querySelector('.guide');
 const guideItems = guide.querySelectorAll('.guide__list-item');
@@ -98,3 +99,25 @@ cardBtn.forEach(btn => {
     popUpAction(evt);
   })
 })
+
+const questPhoneInput = document.querySelector('.questions__phone');
+const questEmailInput = document.querySelector('.questions__email');
+const questBtnSubmit = document.querySelector('.questions__button');
+const modalPhoneInput = document.querySelector('.buy-modal__input--phone');
+const modalEmailInput = document.querySelector('.buy-modal__input--email');
+const modalBtnSubmit = document.querySelector('.buy-modal__submit');
+
+questBtnSubmit.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  localStorage.setItem('q-phone', questPhoneInput.value);
+  localStorage.setItem('q-email', questEmailInput.value);
+})
+
+modalBtnSubmit.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  localStorage.setItem('m-phone', modalPhoneInput.value);
+  localStorage.setItem('m-email', modalEmailInput.value);
+})
+
+
+
