@@ -103,3 +103,30 @@
     margin-top: 25px;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .buy-modal {
+    width: 320px;
+    left: 0;
+
+    &::before {
+      display: none;
+    }
+
+    form {
+      width: 320px;
+    }
+
+    .buy-modal__input {
+      width: 288px;
+    }
+
+    .buy-modal__label {
+      left: 30px;
+    }
+
+    .buy-modal__submit {
+      @include mobile-btn;
+    }
+  }
+}

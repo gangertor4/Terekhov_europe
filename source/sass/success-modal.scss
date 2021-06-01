@@ -1,0 +1,50 @@
+.success-modal {
+  width: 728px;
+  height: 444px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: #FBF8F8;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .success-modal__button {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    position: absolute;
+    border: none;
+    background-color: #FFFFFF;
+    background-image: url("../img/menu-cross.svg");
+    background-size: cover;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .success-modal__text {
+    width: 399px;
+    text-align: center;
+    font-family: $custom-font;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 42.5px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .success-modal {
+    width: 320px;
+
+    .success-modal__text {
+      width: 288px;
+      font-size: 20px;
+    }
+  }
+}

@@ -1868,6 +1868,25 @@ body {
     background-color: #FE7865;
     margin-top: 25px; }
 
+@media (max-width: 767px) {
+  .buy-modal {
+    width: 320px;
+    left: 0; }
+    .buy-modal::before {
+      display: none; }
+    .buy-modal form {
+      width: 320px; }
+    .buy-modal .buy-modal__input {
+      width: 288px; }
+    .buy-modal .buy-modal__label {
+      left: 30px; }
+    .buy-modal .buy-modal__submit {
+      width: 288px;
+      height: 50px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px; } }
+
 .disabler {
   position: fixed;
   top: 0px;
@@ -1875,3 +1894,45 @@ body {
   width: 100%;
   height: 100%;
   z-index: 9; }
+
+.success-modal {
+  width: 728px;
+  height: 444px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: #FBF8F8;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .success-modal .success-modal__button {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    position: absolute;
+    border: none;
+    background-color: #FFFFFF;
+    background-image: url("../img/menu-cross.svg");
+    background-size: cover;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; }
+  .success-modal .success-modal__text {
+    width: 399px;
+    text-align: center;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 42.5px; }
+
+@media (max-width: 767px) {
+  .success-modal {
+    width: 320px; }
+    .success-modal .success-modal__text {
+      width: 288px;
+      font-size: 20px; } }

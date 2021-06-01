@@ -56,49 +56,106 @@ const buyModal = document.querySelector('.buy-modal');
 const closeModalBtn = buyModal.querySelector('.buy-modal__button');
 const disabler = document.querySelector('.disabler');
 const phoneInput = buyModal.querySelector('.buy-modal__input--phone');
+const successModal = document.querySelector('.success-modal');
+const closeSuccessModalBtn = successModal.querySelector('.success-modal__button');
 
 const isEscEvent = function (evt) {
   return evt.key === ('Escape' || 'Esc');
 };
 
-const closePopUp = function() {
-  buyModal.classList.add('visually-hidden');
+const closePopUp = function(modal) {
+  modal.classList.add('visually-hidden');
   disabler.classList.add('visually-hidden');
 }
 
-const onPopUpEscKeydown = function (evt) {
+const onPopUpEscKeydownBuy = function (evt) {
   if (isEscEvent(evt)) {
     evt.preventDefault();
-    closePopUp();
+    closePopUp(buyModal);
   }
 };
 
-const popUpAction = function (evt) {
+const popUpBuyAction = function (evt) {
   evt.preventDefault();
     buyModal.classList.remove('visually-hidden');
     disabler.classList.remove('visually-hidden');
     phoneInput.focus();
-    document.addEventListener('keydown', onPopUpEscKeydown);
+    document.addEventListener('keydown', onPopUpEscKeydownBuy);
     closeModalBtn.addEventListener('click', function () {
-      closePopUp();
+      closePopUp(buyModal);
     });
     
     disabler.addEventListener('click', function () {
-      closePopUp();
+      closePopUp(buyModal);
     });
 }
 
 pricesBtn.forEach(btn => {
   btn.addEventListener('click', (evt) => {
-    popUpAction(evt);
+    popUpBuyAction(evt);
   })
 })
 
-cardBtn.forEach(btn => {
-  btn.addEventListener('click', (evt) => {
-    popUpAction(evt);
+cardBtn.forEach(button => {
+  button.addEventListener('click', (evt) => {
+    popUpBuyAction(evt);
   })
 })
+
+const onPopUpEscKeydownSuccess = function (evt) {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    closePopUp(successModal);
+  }
+};
+
+const popUpSuccessAction = function (evt) {
+  evt.preventDefault();
+    successModal.classList.remove('visually-hidden');
+    disabler.classList.remove('visually-hidden');
+    document.addEventListener('keydown', onPopUpEscKeydownSuccess);
+    closeSuccessModalBtn.addEventListener('click', function () {
+      closePopUp(successModal);
+    });
+    
+    disabler.addEventListener('click', function () {
+      closePopUp(successModal);
+    });
+}
+
+const uploadForm = document.querySelectorAll('.form');
+const url = 'https://echo.htmlacademy.ru';
+
+
+uploadForm.forEach(form => {
+  form.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+  
+    const formData = new FormData(evt.target);
+  
+    fetch( 
+      url,
+      {
+        method: 'POST',
+        body: formData,
+      },
+    )
+      .then((response) => {
+        if (response.ok) {
+          closePopUp(buyModal);
+          popUpSuccessAction(evt);
+        } 
+        
+        return;
+        }
+      )    
+      .catch(() => {
+        return
+      })
+  })
+})
+
+
 
 const questPhoneInput = document.querySelector('.questions__phone');
 const questEmailInput = document.querySelector('.questions__email');
@@ -107,14 +164,12 @@ const modalPhoneInput = document.querySelector('.buy-modal__input--phone');
 const modalEmailInput = document.querySelector('.buy-modal__input--email');
 const modalBtnSubmit = document.querySelector('.buy-modal__submit');
 
-questBtnSubmit.addEventListener('click', function (evt) {
-  evt.preventDefault();
+questBtnSubmit.addEventListener('click', function () {
   localStorage.setItem('q-phone', questPhoneInput.value);
   localStorage.setItem('q-email', questEmailInput.value);
 })
 
-modalBtnSubmit.addEventListener('click', function (evt) {
-  evt.preventDefault();
+modalBtnSubmit.addEventListener('click', function () {
   localStorage.setItem('m-phone', modalPhoneInput.value);
   localStorage.setItem('m-email', modalEmailInput.value);
 })

@@ -13,37 +13,54 @@ const uglify = require("gulp-uglify");
 const htmlmin = require("gulp-htmlmin");
 const del = require("del");
 const webp = require("gulp-webp");
+const imagemin = require("gulp-imagemin");
 
 
 
 //sass to css
 
-gulp.task('sass', function() {
+const styles = () => {
     return gulp.src("source/sass/style.scss")
         .pipe(sass())
         .pipe(postcss([
           autoprefixer(),
         ]))
-        .pipe(gulp.dest("source/css"))
+        .pipe(gulp.dest("build/css"))
         .pipe(browserSync.stream());
-});
+};
+
+exports.styles = styles;
 
 //Server & watcher
 
-gulp.task('server', gulp.series('sass', function() {
-    browserSync.init({
-        server: {
-            baseDir: "source/"
-        }
-    });
+const server = (done) => {
+  browserSync.init({
+    server: {
+      baseDir: "build"
+    },
+    cors: true,
+    notify: false,
+    ui: false,
+  });
+  done();
+}
 
-    gulp.watch("source/sass/*.scss", gulp.series('sass'));
-    gulp.watch("source/*.html").on('change', browserSync.reload);
-    gulp.watch("source/js/*.js").on('change', browserSync.reload);
-}));
+exports.server = server;
 
-gulp.task('default', gulp.series('server'));
+// Reload
 
+const reload = done => {
+  browserSync.reload();
+  done();
+}
+
+// Watcher
+
+const watcher = () => {
+  gulp.watch("source/sass/**/*.scss", gulp.series(stylesMin));
+  gulp.watch("source/js/script.js", gulp.series(scripts));
+  gulp.watch("source/*.html", gulp.series(html, reload));
+}
 //SVG to spites
 
 const sprite = () => {
@@ -60,7 +77,7 @@ exports.sprite = sprite
 const createWebp = () => {
   return gulp.src("source/img/**/*.{jpg,png}")
     .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("source/img"))
+    .pipe(gulp.dest("build/img"))
 }
 
 exports.createWebp = createWebp;
@@ -113,6 +130,19 @@ const html = () => {
     .pipe(gulp.dest("build"));
 }
 
+const images = () => {
+  return gulp.src("source/img/**/*.{png,jpg,svg}")
+    .pipe(imagemin([
+      imagemin.mozjpeg({progressive: true}),
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.svgo()
+    ]))
+    .pipe(gulp.dest("build/img"))
+}
+
+exports.images = images;
+
+
 const clean = () => {
   return del("build");
 };
@@ -121,12 +151,28 @@ const build = gulp.series(
   clean,
   gulp.parallel(
     stylesMin,
+    styles,
     html,
     scripts,
-    copy
+    copy,
+    images,
+    createWebp
   ));
 
 exports.build = build;
 
 
-
+exports.default = gulp.series(
+  clean,
+  gulp.parallel(
+    stylesMin,
+    styles,
+    html,
+    scripts,
+    copy,
+    createWebp
+  ),
+  gulp.series(
+    server,
+    watcher
+  ));
